@@ -101,7 +101,7 @@ ARG CACHEBUST=1
 
 ######################################### Viper Producer directory
 
-RUN git clone --depth 1 https://github.com/sarazeyn/transactionalmachinelearning.git
+RUN git --depth 1 https://github.com/sarazeyn/transactionalmachinelearning.git
 
 RUN cp -R transactionalmachinelearning Viper-produce/transactionalmachinelearning
 
