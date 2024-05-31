@@ -102,31 +102,34 @@ ARG CACHEBUST=1
 ######################################### Viper Producer directory
 
 RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
-RUN ls -l raspberrypi
-RUN cp -R raspberrypi Viper-produce/transactionalmachinelearning
+
+Run ls -l raspberrypi
+
+RUN cp -R transactionalmachinelearning Viper-produce/transactionalmachinelearning
 
 WORKDIR Viper-produce
 
 RUN echo "*******************Viper for $CHIP PRODUCER**********************"
 
-RUN if [ "AMD64" = "ARM32" ] ; \
+RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip raspberrypi/ARM-Chipset/szeyn-VIPER\ *\ Linux\ ARM.zip && \
+  unzip transactionalmachinelearning/ARM-Chipset/szeyn-VIPER\ *\ Linux\ ARM.zip && \
   chmod 755 viper-linux-arm ; \
-elif [ "AMD64" =  "ARM64" ] ; \
+elif [ "$CHIP" =  "ARM64" ] ; \
   then \
-  unzip raspberrypi/ARM64-Chipset/szeyn-VIPER\ *\ Linux\ ARM64.zip && \
+  unzip transactionalmachinelearning/ARM64-Chipset/szeyn-VIPER\ *\ Linux\ ARM64.zip && \
   chmod 755 viper-linux-arm64 ; \
-elif [ "AMD64" = "AMD64" ] ; \
+elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPER\ *\ Linux\ AMD64.zip && \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Linux\ AMD64.zip && \
   chmod 755 viper-linux-amd64 ; \ 
-elif [ "AMD64" = "MAC" ] ; \
+elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPER\ *\ Mac\ AMD64.zip && \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Mac\ AMD64.zip && \
   chmod 755 viper-darwin-amd64 ; \ 
-elif [ "AMD64" = "WINDOWS" ] ; \
+elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Windows\ AMD64.zip && \
   chmod 755 viper-windows-amd64 ; \ 
 fi
 
@@ -136,32 +139,32 @@ RUN chmod -R +x Viper-produce
 
 ######################################### Viper Preprocess directory
 
-RUN cp -R sarazeyn/raspberrypi/transactionalmachinelearning Viper-preprocess/transactionalmachinelearning
+RUN cp -R transactionalmachinelearning Viper-preprocess/transactionalmachinelearning
 
 WORKDIR Viper-preprocess
 
-#RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
+#RUN git clone --depth 1  https://github.com/sarazeyn/raspberrypi.git
 RUN echo "*******************Viper for $CHIP PREPROCESS**********************"
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip raspberrypi/ARM-Chipset/szeyn-VIPER\ *\ Linux\ ARM.zip && \
+  unzip transactionalmachinelearning/ARM-Chipset/szeyn-VIPER\ *\ Linux\ ARM.zip && \
   chmod 755 viper-linux-arm ; \
 elif [ "$CHIP" =  "ARM64" ] ; \
   then \
-  unzip raspberrypi/ARM64-Chipset/szeyn-VIPER\ *\ Linux\ ARM64.zip && \
+  unzip transactionalmachinelearning/ARM64-Chipset/szeyn-VIPER\ *\ Linux\ ARM64.zip && \
   chmod 755 viper-linux-arm64 ; \
 elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPER\ *\ Linux\ AMD64.zip && \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Linux\ AMD64.zip && \
   chmod 755 viper-linux-amd64 ; \ 
 elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPER\ *\ Mac\ AMD64.zip && \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Mac\ AMD64.zip && \
   chmod 755 viper-darwin-amd64 ; \ 
 elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPER\ *\ Windows\ AMD64.zip && \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Windows\ AMD64.zip && \
   chmod 755 viper-windows-amd64 ; \ 
 fi
 
@@ -171,32 +174,32 @@ RUN chmod -R +x Viper-preprocess
 
 ######################################### Viper Preprocess2 directory
 
-RUN cp -R raspberrypi Viper-preprocess2/transactionalmachinelearning
+RUN cp -R transactionalmachinelearning Viper-preprocess2/transactionalmachinelearning
 
 WORKDIR Viper-preprocess2
 
-#RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
+#RUN git clone --depth 1  https://github.com/sarazeyn/raspberrypi.git
 RUN echo "*******************Viper for $CHIP PREPROCESS2**********************"
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip raspberrypi/ARM-Chipset/szeyn-VIPER\ *\ Linux\ ARM.zip && \
+  unzip transactionalmachinelearning/ARM-Chipset/szeyn-VIPER\ *\ Linux\ ARM.zip && \
   chmod 755 viper-linux-arm ; \
 elif [ "$CHIP" =  "ARM64" ] ; \
   then \
-  unzip raspberrypi/ARM64-Chipset/szeyn-VIPER\ *\ Linux\ ARM64.zip && \
+  unzip transactionalmachinelearning/ARM64-Chipset/szeyn-VIPER\ *\ Linux\ ARM64.zip && \
   chmod 755 viper-linux-arm64 ; \
 elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPER\ *\ Linux\ AMD64.zip && \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Linux\ AMD64.zip && \
   chmod 755 viper-linux-amd64 ; \ 
 elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPER\ *\ Mac\ AMD64.zip && \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Mac\ AMD64.zip && \
   chmod 755 viper-darwin-amd64 ; \ 
 elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPER\ *\ Windows\ AMD64.zip && \
+  unzip transactionalmachinelearning/szeyn-VIPER\ *\ Windows\ AMD64.zip && \
   chmod 755 viper-windows-amd64 ; \   
 fi
 
@@ -210,28 +213,28 @@ RUN mkdir Viperviz/viperviz
 RUN mkdir Viperviz/viperviz/views
 RUN chmod -R +x Viperviz
 
-RUN cp -R raspberrypi Viperviz/transactionalmachinelearning
+RUN cp -R transactionalmachinelearning Viperviz/transactionalmachinelearning
 
 WORKDIR Viperviz
 
-#RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
+#RUN git clone --depth 1  https://github.com/sarazeyn/raspberrypi.git
 
-#RUN unzip raspberrypi/ARM-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM.zip || true
+#RUN unzip transactionalmachinelearning/ARM-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM.zip || true
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip raspberrypi/ARM-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM.zip || true ; \
+  unzip transactionalmachinelearning/ARM-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM.zip || true ; \
 elif [ "$CHIP" = "ARM64" ] ; \
   then \
-  unzip raspberrypi/ARM64-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM64.zip || true ; \
+  unzip transactionalmachinelearning/ARM64-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM64.zip || true ; \
 elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPERviz\ *\ Linux\ AMD64.zip || true ; \ 
+  unzip transactionalmachinelearning/szeyn-VIPERviz\ *\ Linux\ AMD64.zip || true ; \ 
 elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPERviz\ *\ Mac\ AMD64.zip || true ; \ 
+  unzip transactionalmachinelearning/szeyn-VIPERviz\ *\ Mac\ AMD64.zip || true ; \ 
 elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
-  unzip raspberrypi/szeyn-VIPERviz\ *\ Windows\ AMD64.zip || true ; \ 
+  unzip transactionalmachinelearning/szeyn-VIPERviz\ *\ Windows\ AMD64.zip || true ; \ 
 fi
 
 
@@ -261,27 +264,27 @@ RUN echo "*********************Downloading and Installing HPDE AutoML***********
 RUN mkdir Hpde
 RUN chmod -R +x Hpde
 
-RUN cp -R raspberrypi Hpde/transactionalmachinelearning
+RUN cp -R transactionalmachinelearning Hpde/transactionalmachinelearning
 
 WORKDIR Hpde
 
-#RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
+#RUN git clone --depth 1  https://github.com/sarazeyn/raspberrypi.git
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip raspberrypi/ARM-Chipset/szeyn-HPDE\ *\ Linux\ ARM.zip || true ; \
+  unzip transactionalmachinelearning/ARM-Chipset/szeyn-HPDE\ *\ Linux\ ARM.zip || true ; \
 elif [ "$CHIP" = "ARM64" ] ; \
   then \
-  unzip raspberrypi/ARM64-Chipset/szeyn-HPDE\ *\ Linux\ ARM64.zip || true ; \
+  unzip transactionalmachinelearning/ARM64-Chipset/szeyn-HPDE\ *\ Linux\ ARM64.zip || true ; \
 elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip raspberrypi/szeyn-HPDE\ *\ Linux\ AMD64.zip || true ; \
+  unzip transactionalmachinelearning/szeyn-HPDE\ *\ Linux\ AMD64.zip || true ; \
 elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip raspberrypi/szeyn-HPDE\ *\ Mac\ AMD64.zip || true ; \
+  unzip transactionalmachinelearning/szeyn-HPDE\ *\ Mac\ AMD64.zip || true ; \
 elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
-  unzip raspberrypi/szeyn-HPDE\ *\ Windows\ AMD64.zip || true ; \
+  unzip transactionalmachinelearning/szeyn-HPDE\ *\ Windows\ AMD64.zip || true ; \
 fi
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
@@ -313,7 +316,7 @@ RUN chmod -R +x Hpde
 
 
 RUN echo "Replace VIPER.ENV"
-RUN git clone --depth 1https://github.com/sarazeyn/raspberrypi
+RUN git clone --depth 1  https://github.com/sarazeyn/raspberrypi.git
 
 RUN chmod -R +x raspberrypi
 
