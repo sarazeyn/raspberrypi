@@ -180,23 +180,23 @@ RUN echo "*******************Viper for $CHIP PREPROCESS2**********************"
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip transactionalmachinelearning/ARM-Chipset/MAADS-VIPER\ *\ Linux\ ARM.zip && \
+  unzip raspberrypi/ARM-Chipset/szeyn-VIPER\ *\ Linux\ ARM.zip && \
   chmod 755 viper-linux-arm ; \
 elif [ "$CHIP" =  "ARM64" ] ; \
   then \
-  unzip transactionalmachinelearning/ARM64-Chipset/MAADS-VIPER\ *\ Linux\ ARM64.zip && \
+  unzip raspberrypi/ARM64-Chipset/szeyn-VIPER\ *\ Linux\ ARM64.zip && \
   chmod 755 viper-linux-arm64 ; \
 elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-VIPER\ *\ Linux\ AMD64.zip && \
+  unzip raspberrypi/szeyn-VIPER\ *\ Linux\ AMD64.zip && \
   chmod 755 viper-linux-amd64 ; \ 
 elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-VIPER\ *\ Mac\ AMD64.zip && \
+  unzip raspberrypi/szeyn-VIPER\ *\ Mac\ AMD64.zip && \
   chmod 755 viper-darwin-amd64 ; \ 
 elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-VIPER\ *\ Windows\ AMD64.zip && \
+  unzip raspberrypi/szeyn-VIPER\ *\ Windows\ AMD64.zip && \
   chmod 755 viper-windows-amd64 ; \   
 fi
 
@@ -210,28 +210,28 @@ RUN mkdir Viperviz/viperviz
 RUN mkdir Viperviz/viperviz/views
 RUN chmod -R +x Viperviz
 
-RUN cp -R transactionalmachinelearning Viperviz/transactionalmachinelearning
+RUN cp -R raspberrypi Viperviz/transactionalmachinelearning
 
 WORKDIR Viperviz
 
 #RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
 
-#RUN unzip transactionalmachinelearning/ARM-Chipset/MAADS-VIPERviz\ *\ Linux\ ARM.zip || true
+#RUN unzip raspberrypi/ARM-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM.zip || true
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip transactionalmachinelearning/ARM-Chipset/MAADS-VIPERviz\ *\ Linux\ ARM.zip || true ; \
+  unzip raspberrypi/ARM-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM.zip || true ; \
 elif [ "$CHIP" = "ARM64" ] ; \
   then \
-  unzip transactionalmachinelearning/ARM64-Chipset/MAADS-VIPERviz\ *\ Linux\ ARM64.zip || true ; \
+  unzip raspberrypi/ARM64-Chipset/szeyn-VIPERviz\ *\ Linux\ ARM64.zip || true ; \
 elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-VIPERviz\ *\ Linux\ AMD64.zip || true ; \ 
+  unzip raspberrypi/szeyn-VIPERviz\ *\ Linux\ AMD64.zip || true ; \ 
 elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-VIPERviz\ *\ Mac\ AMD64.zip || true ; \ 
+  unzip raspberrypi/szeyn-VIPERviz\ *\ Mac\ AMD64.zip || true ; \ 
 elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-VIPERviz\ *\ Windows\ AMD64.zip || true ; \ 
+  unzip raspberrypi/szeyn-VIPERviz\ *\ Windows\ AMD64.zip || true ; \ 
 fi
 
 
@@ -261,7 +261,7 @@ RUN echo "*********************Downloading and Installing HPDE AutoML***********
 RUN mkdir Hpde
 RUN chmod -R +x Hpde
 
-RUN cp -R transactionalmachinelearning Hpde/transactionalmachinelearning
+RUN cp -R raspberrypi Hpde/transactionalmachinelearning
 
 WORKDIR Hpde
 
@@ -269,19 +269,19 @@ WORKDIR Hpde
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip transactionalmachinelearning/ARM-Chipset/MAADS-HPDE\ *\ Linux\ ARM.zip || true ; \
+  unzip raspberrypi/ARM-Chipset/szeyn-HPDE\ *\ Linux\ ARM.zip || true ; \
 elif [ "$CHIP" = "ARM64" ] ; \
   then \
-  unzip transactionalmachinelearning/ARM64-Chipset/MAADS-HPDE\ *\ Linux\ ARM64.zip || true ; \
+  unzip raspberrypi/ARM64-Chipset/szeyn-HPDE\ *\ Linux\ ARM64.zip || true ; \
 elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-HPDE\ *\ Linux\ AMD64.zip || true ; \
+  unzip raspberrypi/szeyn-HPDE\ *\ Linux\ AMD64.zip || true ; \
 elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-HPDE\ *\ Mac\ AMD64.zip || true ; \
+  unzip raspberrypi/szeyn-HPDE\ *\ Mac\ AMD64.zip || true ; \
 elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
-  unzip transactionalmachinelearning/MAADS-HPDE\ *\ Windows\ AMD64.zip || true ; \
+  unzip raspberrypi/szeyn-HPDE\ *\ Windows\ AMD64.zip || true ; \
 fi
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
