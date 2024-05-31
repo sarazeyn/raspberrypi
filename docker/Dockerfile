@@ -136,7 +136,7 @@ RUN chmod -R +x Viper-produce
 
 ######################################### Viper Preprocess directory
 
-RUN cp -R raspberrypi Viper-preprocess/transactionalmachinelearning
+RUN cp -R sarazeyn/raspberrypi/transactionalmachinelearning Viper-preprocess/transactionalmachinelearning
 
 WORKDIR Viper-preprocess
 
