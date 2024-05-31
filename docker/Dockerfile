@@ -109,23 +109,23 @@ WORKDIR Viper-produce
 
 RUN echo "*******************Viper for $CHIP PRODUCER**********************"
 
-RUN if [ "$CHIP" = "ARM32" ] ; \
+RUN if [ "AMD64" = "ARM32" ] ; \
   then \
   unzip raspberrypi/ARM-Chipset/szeyn-VIPER\ *\ Linux\ ARM.zip && \
   chmod 755 viper-linux-arm ; \
-elif [ "$CHIP" =  "ARM64" ] ; \
+elif [ "AMD64" =  "ARM64" ] ; \
   then \
   unzip raspberrypi/ARM64-Chipset/szeyn-VIPER\ *\ Linux\ ARM64.zip && \
   chmod 755 viper-linux-arm64 ; \
-elif [ "$CHIP" = "AMD64" ] ; \
+elif [ "AMD64" = "AMD64" ] ; \
   then \
   unzip raspberrypi/szeyn-VIPER\ *\ Linux\ AMD64.zip && \
   chmod 755 viper-linux-amd64 ; \ 
-elif [ "$CHIP" = "MAC" ] ; \
+elif [ "AMD64" = "MAC" ] ; \
   then \
   unzip raspberrypi/szeyn-VIPER\ *\ Mac\ AMD64.zip && \
   chmod 755 viper-darwin-amd64 ; \ 
-elif [ "$CHIP" = "WINDOWS" ] ; \
+elif [ "AMD64" = "WINDOWS" ] ; \
   then \
   chmod 755 viper-windows-amd64 ; \ 
 fi
