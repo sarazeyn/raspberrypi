@@ -1,5 +1,5 @@
 Common TML Solution Configurations / Suggestions:
-1. The MAIN TML solution container is in Dockerhub: https://hub.docker.com/r/szeynalova/seneca-iot-tml-kafka-amd64
+1. The MAIN TML solution container is in Dockerhub: https://hub.docker.com/r/szeyn/seneca-iot-tml-kafka-amd64
 2. This container is about 5.6GB
 3. When running the container - the TML Dashboard will take about ~1 minute to population
 4. If it does not populate - press START or STOP STREAMING button a few times - it will eventually populate 
