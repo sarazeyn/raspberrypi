@@ -101,7 +101,7 @@ ARG CACHEBUST=1
 
 ######################################### Viper Producer directory
 
-RUN git clone --depth 1 https://github.com/sarazeynraspberrypi.git
+RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
 
 RUN cp -R transactionalmachinelearning Viper-produce/transactionalmachinelearning
 
