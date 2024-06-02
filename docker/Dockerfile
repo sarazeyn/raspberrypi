@@ -109,27 +109,35 @@ WORKDIR Viper-produce
 
 RUN echo "*******************Viper for $CHIP PRODUCER**********************"
 
+RUN echo "*******************Viper for $CHIP PRODUCER**********************"
+
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
-  unzip $(find raspberrypi/ARM-Chipset/ -name 'szeyn-VIPER * Linux ARM.zip') && \
+  ZIP_FILE=$(find raspberrypi/ARM-Chipset/ -name 'szeyn-VIPER * Linux ARM.zip') && \
+  unzip "$ZIP_FILE" && \
   chmod 755 viper-linux-arm ; \
 elif [ "$CHIP" =  "ARM64" ] ; \
   then \
-  unzip $(find raspberrypi/ARM64-Chipset/ -name 'szeyn-VIPER * Linux ARM64.zip') && \
+  ZIP_FILE=$(find raspberrypi/ARM64-Chipset/ -name 'szeyn-VIPER * Linux ARM64.zip') && \
+  unzip "$ZIP_FILE" && \
   chmod 755 viper-linux-arm64 ; \
 elif [ "$CHIP" = "AMD64" ] ; \
   then \
-  unzip $(find raspberrypi/ -name 'szeyn-VIPER * Linux AMD64.zip') && \
+  ZIP_FILE=$(find raspberrypi/ -name 'szeyn-VIPER * Linux AMD64.zip') && \
+  unzip "$ZIP_FILE" && \
   chmod 755 viper-linux-amd64 ; \ 
 elif [ "$CHIP" = "MAC" ] ; \
   then \
-  unzip $(find raspberrypi/ -name 'szeyn-VIPER * Mac AMD64.zip') && \
+  ZIP_FILE=$(find raspberrypi/ -name 'szeyn-VIPER * Mac AMD64.zip') && \
+  unzip "$ZIP_FILE" && \
   chmod 755 viper-darwin-amd64 ; \ 
 elif [ "$CHIP" = "WINDOWS" ] ; \
   then \
-  unzip $(find raspberrypi/ -name 'szeyn-VIPER * Windows AMD64.zip') && \
+  ZIP_FILE=$(find raspberrypi/ -name 'szeyn-VIPER * Windows AMD64.zip') && \
+  unzip "$ZIP_FILE" && \
   chmod 755 viper-windows-amd64 ; \ 
 fi
+
 
 RUN rm -rf raspberrypi
 WORKDIR /
