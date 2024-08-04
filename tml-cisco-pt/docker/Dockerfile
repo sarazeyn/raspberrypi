@@ -107,7 +107,7 @@ ARG CACHEBUST=1
 
 ######################################### Viper Producer directory
 
-RUN git clone --depth 1 https://github.com/smaurice101/transactionalmachinelearning.git
+RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
 
 RUN cp -R transactionalmachinelearning Viper-produce/transactionalmachinelearning
 
@@ -147,7 +147,7 @@ RUN cp -R transactionalmachinelearning Viper-preprocess/transactionalmachinelear
 
 WORKDIR Viper-preprocess
 
-#RUN git clone --depth 1 https://github.com/smaurice101/transactionalmachinelearning.git
+#RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
 RUN echo "*******************Viper for $CHIP PREPROCESS**********************"
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
@@ -186,7 +186,7 @@ RUN cp -R transactionalmachinelearning Viperviz/transactionalmachinelearning
 
 WORKDIR Viperviz
 
-#RUN git clone --depth 1 https://github.com/smaurice101/transactionalmachinelearning.git
+#RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
 
 #RUN unzip transactionalmachinelearning/ARM-Chipset/MAADS-VIPERviz\ *\ Linux\ ARM.zip || true
 RUN if [ "$CHIP" = "ARM32" ] ; \
@@ -237,7 +237,7 @@ RUN cp -R transactionalmachinelearning Hpde/transactionalmachinelearning
 
 WORKDIR Hpde
 
-#RUN git clone --depth 1 https://github.com/smaurice101/transactionalmachinelearning.git
+#RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
 
 RUN if [ "$CHIP" = "ARM32" ] ; \
   then \
@@ -281,7 +281,7 @@ RUN chmod -R +x Hpde
 
 ##################################################CLONE RASPBERRY PI REPO #######################
 
-RUN git clone --depth 1 https://github.com/smaurice101/raspberrypi.git
+RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
 
 RUN chmod -R +x raspberrypi
 
