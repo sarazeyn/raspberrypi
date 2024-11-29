@@ -102,10 +102,12 @@ ARG CACHEBUST=1
 ######################################### Viper Producer directory
 
 RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
-
-RUN ls -l transactionalmachinelearning
-RUN ls -l Viper-produce/raspberrypi
-RUN chmod -R 755 transactionalmachinelearning
+RUN ls -l raspberrypi
+RUN if [ -d "raspberrypi/transactionalmachinelearning" ]; then \
+      cp -R raspberrypi/transactionalmachinelearning . ; \
+    else \
+      echo "Directory transactionalmachinelearning not found"; \
+    fi
 
 
 RUN mkdir -p Viper-produce/raspberrypi
