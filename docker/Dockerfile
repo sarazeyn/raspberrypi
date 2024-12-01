@@ -314,7 +314,7 @@ RUN chmod -R +x Hpde
 
 
 RUN echo "Replace VIPER.ENV"
-RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi
+RUN git clone --depth 1 https://github.com/sarazeyn/raspberrypi.git
 
 RUN chmod -R +x raspberrypi
 
