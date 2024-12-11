@@ -15,7 +15,7 @@ spec:
       hostNetwork: true
       containers:
       - name: iot
-        image: saraz84/seneca-iot-tml-kafka-amd64:tagname
+        image: 071d9a64cd0c/saraz84/seneca-iot-tml-kafka-amd64_modification
         ports:
            - containerPort: 9005
              hostPort: 9005
