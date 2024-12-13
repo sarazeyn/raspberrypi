@@ -6,16 +6,17 @@ spec:
   selector:
     matchLabels:
       app: iot
-  replicas: 1
+  replicas: 1 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
         app: iot
     spec:
-      hostNetwork: true  # remove this if you don't need host networking
+      hostNetwork: true
       containers:
       - name: iot
-        image: saraz84/seneca-iot-tml-kafka-amd64_modification:latest
+        image: saraz84/seneca-iot-tml-kafka-amd64_modification
         ports:
-        - containerPort: 9005
-          hostPort: 9005
+           - containerPort: 9005
+             hostPort: 9005
+      
