@@ -15,7 +15,7 @@ spec:
       hostNetwork: true  # remove this if you don't need host networking
       containers:
       - name: iot
-        image: saraz84/seneca-iot-tml-kafka-amd64_modification:newtag
+        image: saraz84/seneca-iot-tml-kafka-amd64_modification:latest
         ports:
         - containerPort: 9005
           hostPort: 9005
